@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Temporal-guided Mixture-of-Experts for Zero-shot Video Question Answering</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script src="https://kit.fontawesome.com/7d0ef08ed7.js" crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Temporal-guided Mixture-of-Experts for Zero-shot Video Question Answering</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              Yixin Qin<sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=g5QO1oIAAAAJ&hl=zh-CN">Lei Zhao*<sup>1,2</sup>,</span>
+            <span class="author-block">
+              <a href="https://lianligao.github.io/">Lianli Gao<sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://zchoi.github.io/">Haonan Zhang<sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://ppengzeng.github.io/">Pengpeng Zeng<sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://cfm.uestc.edu.cn/~shenht/">Heng Tao Shen</a><sup>1,2</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>University of Electronic Science and Technology of China,</span>
+            <span class="author-block"><sup>2</sup>Sichuan Artificial Intelligence Reasearch Institute</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://youtu.be/6I93GOZi7rw"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/qyx1121/T-MoENet"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Demo Link. -->
+              <span class="link-block">
+                <a href="https://huggingface.co/spaces/yixin1121/T-MoENet"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fa-solid fa-cube"></i>
+                  </span>
+                  <span>Demo</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://drive.google.com/drive/folders/1xCiR8t8RxO1ExMM5HI2skSHEzRZ2_cL7?usp=drive_link"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="./static/images/framework_new.png" width="1600" height="1200"></img>
+      <h2 class="subtitle has-text-centered">
+        The framework of our T-MoENet
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Video Question Answering (VideoQA) is a challenging task in the vision-language field. Due to the time-consuming
+            and labor-intensive labeling process of the question-answer pairs,
+            fully supervised methods are no longer suitable for the current
+            increasing demand for data. This has led to the rise of zero-shot VideoQA, and some works propose to adapt large language models (LLMs) to assist zero-shot learning. Despite recent
+            progress, the inadequacy of LLMs in comprehending temporal
+            information in videos and the neglect of temporal differences,
+            e.g., the different dynamic changes between scenes or objects,
+            remain insufficiently addressed by existing attempts in zero-shot VideoQA. In light of these challenges, a novel Temporal-guided Mixture-of-Experts Network (T-MoENet) for zero-shot
+            video question answering is proposed in this paper. Specifically,
+            we apply a temporal module to imbue language models with
+            the capacity to perceive temporal information. Then a temporal-guided mixture-of-experts module is proposed to further learn
+            the temporal differences presented in different videos. It enables
+            the model to effectively improve the capacity of generalization.
+            Our proposed method achieves state-of-the-art performance on
+            multiple zero-shot VideoQA benchmarks, notably improving
+            accuracy by 5.6% on TGIF-FrameQA and 2.3% on MSRVTT-QA while remaining competitive with other methods in the fully
+            supervised setting.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/6I93GOZi7rw?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
